@@ -1,0 +1,59 @@
+<tool id="bedtools_flankbed" name="FlankBed" version="0.2.0">
+    <description></description>
+    <macros>
+        <import>macros.xml</import>
+    </macros>
+    <expand macro="requirements" />
+    <expand macro="stdio" />
+    <command>
+        flankBed
+        $pct
+        $strand
+        -g $genome
+        -i $inputA
+        &gt; $output
+        #if addition.addition_select = 'b':
+        -b $b
+        #else:
+        -l $l
+        -r $r
+        #end if
+    </command>
+    <inputs>
+        <param format="bed,vcf,gff,gff3" name="inputA" type="data" label="BED or BAM file"/>
+        <expand macro="genome" />
+        <param name="pct" type="boolean" checked="false" truevalue="-pct" falsevalue="" label="Define -l and -r as a fraction of the feature’s length" help="E.g. if used on a 1000bp feature, -l 0.50, will add 500 bp “upstream”" />
+        <param name="strand" type="boolean" checked="false" truevalue="-s" falsevalue="" label="Define -l and -r based on strand" help="For example. if used, -l 500 for a negative-stranded feature, it will add 500 bp to the end coordinate" />
+
+
+        <conditional name="addition">
+            <param name="addition_select" type="select" label="Choose what you want to do">
+                <option value="b" selected="True">Increase the BED/GFF/VCF entry by the same number base pairs in each direction.</option>
+                <option value="lr">Increase by Start Coordinate and End Coordinate</option>
+            </param>
+            <when value="b">
+                <param name="b" label="Give Value" type="integer" value="0"  />
+            </when>
+            <when value="lr">
+                <param name="l" label="The number of base pairs to subtract from the start coordinate" type="integer" value="0"  />
+                <param name="r" label="The number of base pairs to add to the end coordinate" type="integer" value="0"  />
+            </when>
+        </conditional>
+    </inputs>
+    <outputs>
+        <data format_source="inputA" name="output" metadata_source="inputA" label=""/>
+    </outputs>
+    <help>
+
+**What it does**
+
+bedtools flank will optionally create flanking intervals whose size is user-specified fraction of the original interval.
+
+.. image:: $PATH_TO_IMAGES/flank-glyph.png
+
+.. class:: warningmark
+
+In order to prevent creating intervals that violate chromosome boundaries, bedtools flank requires a genome file defining the length of each chromosome or contig.
+
+    </help>
+</tool>

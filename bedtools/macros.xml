@@ -16,6 +16,9 @@
         </requirements>
         <version_command>bedtools --version</version_command>
     </xml>
+    <xml name="genome">
+        <param format="bed,vcf,gff,gff3" name="genome" type="data" label="Genome file" />
+    </xml>
     <token name="@REFERENCES@">
 ------
 
