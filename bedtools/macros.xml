@@ -10,6 +10,16 @@
         </stdio>
     </xml>
 
+    <xml name="overlap">
+        <param name="overlap" type="float" value="0.000000001" label="Minimum overlap required as a fraction of A" />
+    </xml>
+    <xml name="strand2">
+        <param name="strand" type="select" label="Calculation based on strandedness?">
+            <option value="" selected="True">Overlaps on either strand</option>
+            <option value="-s">Only overlaps occurring on the **same** strand.</option>
+            <option value="-S">Only overlaps occurring on the **opposite** strand.</option>
+        </param>
+    </xml>
     <xml name="requirements">
         <requirements>
             <requirement type="package" version="2.19.1">bedtools</requirement>
