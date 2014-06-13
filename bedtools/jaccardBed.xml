@@ -40,5 +40,7 @@ Whereas the bedtools intersect tool enumerates each an every intersection betwee
 .. class:: warningmark
 
 The jaccard tool requires that your data is pre-sorted by chromosome and then by start position (e.g., sort -k1,1 -k2,2n in.bed > in.sorted.bed for BED files).
+
+@REFERENCES@
     </help>
 </tool>

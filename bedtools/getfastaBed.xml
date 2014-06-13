@@ -41,5 +41,7 @@ bedtools getfasta will extract the sequence defined by the coordinates in a BED 
 1. The headers in the input FASTA file must exactly match the chromosome column in the BED file.
 
 2. You can use the UNIX fold command to set the line width of the FASTA output. For example, fold -w 60 will make each line of the FASTA file have at most 60 nucleotides for easy viewing.
+
+@REFERENCES@
     </help>
 </tool>

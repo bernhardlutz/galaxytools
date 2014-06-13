@@ -6,7 +6,7 @@
     <expand macro="requirements" />
     <expand macro="stdio" />
     <command>
-        bedToBam
+        bedtools bedtobam
         $ubam
         $bed12
         -mapq $mapq
@@ -30,5 +30,6 @@
 
 bedToBam converts features in a feature file to BAM format. This is useful as an efficient means of storing large genome annotations in a compact, indexed format for visualization purposes.
 
+@REFERENCES@
     </help>
 </tool>

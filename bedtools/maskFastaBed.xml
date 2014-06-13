@@ -31,5 +31,6 @@ bedtools maskfasta masks sequences in a FASTA file based on intervals defined in
 
 .. image:: $PATH_TO_IMAGES/maskfasta-glyph.png
 
+@REFERENCES@
     </help>
 </tool>

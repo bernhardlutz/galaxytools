@@ -6,7 +6,7 @@
     <expand macro="requirements" />
     <expand macro="stdio" />
     <command>
-        bamToBed 
+        bedtools bamtobed 
         $option 
         $ed_score
         -i '$input'

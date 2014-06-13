@@ -70,6 +70,7 @@ bedtools map requires each input file to be sorted by genome coordinate. For BED
 
 The map tool is substantially faster in versions 2.19.0 and later. The plot below demonstrates the increased speed when, for example, counting the number of exome alignments that align to each exon. The bedtools times are compared to the bedops bedmap utility as a point of reference.
 
+@REFERENCES@
 
     </help>
 </tool>
