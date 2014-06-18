@@ -13,7 +13,7 @@
             $bed.input
         #end for
 
-        #if names.names_select == 'yes':
+        #if $names.names_select == 'yes':
         -names
         #for $bed in $names.beds:
             $bed.inputName
@@ -25,7 +25,7 @@
         &gt; $output
     </command>
     <inputs>
-        <param format="bed,vcf,gff,gff3" name="inputA" type="data" label="BED/VCF/GFF file"/>
+        <param format="bed,vcf,gff,gff3" name="inputA" type="data" label="BED/VCF/GFF file" />
         <!-- Additional files, if the user needs more -->
          <conditional name="names">
             <param name="names_select" type="select" label="Specify names for each file">
@@ -48,7 +48,6 @@
         <expand macro="strand2" />
         <param name="counts" type="boolean" checked="false" truevalue="-counts" falsevalue="" label="Report the count of features followed by the % coverage for each annotation file. Default is to report solely the fraction of -i covered by each file." />
         <param name="both" type="boolean" checked="false" truevalue="-both" falsevalue="" label="Report the count of features followed by the % coverage for each annotation file. Default is to report solely the fraction of the input file covered by each file." />
-    </inputs>
     </inputs>
 
     <outputs>

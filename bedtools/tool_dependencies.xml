@@ -1,9 +1,6 @@
 <?xml version="1.0"?>
 <tool_dependency>
     <package name="bedtools" version="2.19.1">
-        <repository name="package_bedtools_2_19" owner="iuc" />
+        <repository changeset_revision="3ad963111153" name="package_bedtools_2_19" owner="iuc" toolshed="https://testtoolshed.g2.bx.psu.edu" />
     </package>
 </tool_dependency>
-
-
-

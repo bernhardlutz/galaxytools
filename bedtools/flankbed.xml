@@ -12,11 +12,11 @@
         -g $genome
         -i $inputA
         &gt; $output
-        #if addition.addition_select = 'b':
-        -b $b
+        #if $addition.addition_select == 'b':
+        -b $addition.b
         #else:
-        -l $l
-        -r $r
+        -l $addition.l
+        -r $addition.r
         #end if
     </command>
     <inputs>
@@ -24,7 +24,7 @@
         <expand macro="genome" />
         <param name="pct" type="boolean" checked="false" truevalue="-pct" falsevalue="" label="Define -l and -r as a fraction of the feature’s length" help="E.g. if used on a 1000bp feature, -l 0.50, will add 500 bp “upstream”" />
         <param name="strand" type="boolean" checked="false" truevalue="-s" falsevalue="" label="Define -l and -r based on strand" help="For example. if used, -l 500 for a negative-stranded feature, it will add 500 bp to the end coordinate" />
-        <expand macro="conditional" />
+        <expand macro="addition" />
 
         
     </inputs>

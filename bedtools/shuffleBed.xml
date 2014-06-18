@@ -10,18 +10,17 @@
         -g $genome
         -i $inputA
         $bedpe
-        -n $intervals
         #if $seed.choose:
         -seed $seed.seed
         #end if
         #if $excl.choose:
         -excl $excl.excl
+        -f $overlap
         #end if
          #if $incl.choose:
         -incl $incl.incl
         #end if
         $chrom
-        -f $overlap
         $chromfirst
         $nooverlap
         $allowBeyond
@@ -30,27 +29,27 @@
     </command>
     <inputs>
         <param format="bed,vcf,gff,gff3" name="inputA" type="data" label="BED/VCF/GFF file"/>
-         <param name="bedpe" type="boolean" label="The file is in BEDPE format" selected="False" truevalue="-bedpe" falsevalue="" />
-            </when>
+        <param name="bedpe" type="boolean" label="The file is in BEDPE format" selected="False" truevalue="-bedpe" falsevalue="" />
         <expand macro="genome" />
         <param name="chrom" type="boolean" label="Keep features in the input file on the same chromosome. Solely permute their location on the chromosome. By default, both the chromosome and position are randomly chosen" selected="False" truevalue="-chrom" falsevalue="" />
-        <param name="intervals" type="integer" value="1000000" label="The number of intervals to generate." />
         <expand macro="seed" />
         <conditional name="excl">
             <param name="choose" type="boolean" label="Choose a BED file of coordinates in which features from -i should not be placed?" selected="False" truevalue="True" falsevalue="False" />
             <when value="True">
                 <param name="excl" type="data" format="bed" label="Choose File" />
+                <expand macro="overlap" />
+            </when>
         </conditional>
         <conditional name="incl">
-            <param name="choose" type="boolean" label="Choose a BED file of coordinates in which features from -i should be placed.?" selected="False" truevalue="True" falsevalue="False" />
+            <param name="choose" type="boolean" label="Choose a BED file of coordinates in which features from -i should be placed?" selected="False" truevalue="True" falsevalue="False" />
             <when value="True">
                 <param name="incl" type="data" format="bed" label="Choose File" />
             </when>
         </conditional>
-        <expand macro="overlap" />
-        <param name="chromfirst" type="boolean" label="Instead of choosing a position randomly among the entire genome (the default), first choose a chrom randomly, and then choose a random start coordinate on that chrom. This leads to features being ~uniformly distributed among the chroms, as opposed to features being distribute as a function of chrom size." selected="False" truevalue="-chromFirst" falsevalue="" />
+        
+        <param name="chromfirst" type="boolean" label="Instead of choosing a position randomly among the entire genome (the default), first choose a chrom randomly, and then choose a random start coordinate on that chrom. This leads to features being ~uniformly distributed among the chroms, as opposed to features being distribute as a function of chrom size" selected="False" truevalue="-chromFirst" falsevalue="" />
 
-        <param name="maxtries" type="integer" value="1000" label="Max. number of attempts to find a home for a shuffled interval in the presence of -incl or -excl. Default = 1000." />
+        <param name="maxtries" type="integer" value="1000" label="Max. number of attempts to find a home for a shuffled interval in the presence of -incl or -excl" />
         <param name="nooverlap" type="boolean" label="Don’t allow shuffled intervals to overlap" selected="False" truevalue="-noOverlapping" falsevalue="" />
         <param name="allowBeyond" type="boolean" label="Allow the original the length of the original records to extebd beyond the length of the chromosome." selected="False" truevalue="-allowBeyondChromEnd" falsevalue="" />
     </inputs>
