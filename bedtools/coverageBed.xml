@@ -19,7 +19,7 @@
         &gt; '$output'
     </command>
     <inputs>
-        <param format="bed,bam,gff,gg3,vcf" name="inputA" type="data" label="Count how many intervals in this BED or BAM file (source)">
+        <param format="bed,bam,gff,gg3,vcf" name="inputA" type="data" label="Count how many intervals in this BED/VCF/GFF/BAM file (source)">
             <validator type="unspecified_build" />
         </param>
         <param format="bed,gff,gff3,vcf" name="inputB" type="data" label="overlap the intervals in this BED file (target)">

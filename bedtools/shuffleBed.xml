@@ -29,7 +29,7 @@
         &gt; $output
     </command>
     <inputs>
-        <param format="bed,vcf,gff,gff3" name="inputA" type="data" label="BED or BAM file"/>
+        <param format="bed,vcf,gff,gff3" name="inputA" type="data" label="BED/VCF/GFF file"/>
          <param name="bedpe" type="boolean" label="The file is in BEDPE format" selected="False" truevalue="-bedpe" falsevalue="" />
             </when>
         <expand macro="genome" />

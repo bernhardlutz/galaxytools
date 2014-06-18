@@ -14,7 +14,7 @@
         -fo $output
     </command>
     <inputs>
-        <param format="bed,vcf,gff,gff3" name="inputA" type="data" label="BED or BAM file"/>
+        <param format="bed,vcf,gff,gff3" name="inputA" type="data" label="BED/VCF/GFF file"/>
         <param format="fasta" name="fasta" type="data" label="Fasta file"/>
 
         <param name="soft" type="boolean" checked="false" truevalue="-name" falsevalue="" label="Soft-mask (that is, convert to lower-case bases) the FASTA sequence. By default, hard-masking (that is, conversion to Ns) is performed" />

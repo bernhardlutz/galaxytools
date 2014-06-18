@@ -14,7 +14,7 @@
         &gt; $output
     </command>
     <inputs>
-        <param format="bed,vcf,gff,gff3" name="inputA" type="data" label="BED or BAM file"/>
+        <param format="bed,vcf,gff,gff3" name="inputA" type="data" label="BED/VCF/GFF file"/>
         <param name="basename" type="text" value="http://genome.ucsc.edu" label="The “basename” for the UCSC browser" />
         <param name="org" type="text" value="human" label="The organism (e.g. mouse, human)" />
         <param name="db" type="text" value="hg18" label="The genome build" />

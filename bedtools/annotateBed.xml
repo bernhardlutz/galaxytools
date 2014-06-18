@@ -25,7 +25,7 @@
         &gt; $output
     </command>
     <inputs>
-        <param format="bed,vcf,gff,gff3" name="inputA" type="data" label="BED or BAM file"/>
+        <param format="bed,vcf,gff,gff3" name="inputA" type="data" label="BED/VCF/GFF file"/>
         <!-- Additional files, if the user needs more -->
          <conditional name="names">
             <param name="names_select" type="select" label="Specify names for each file">

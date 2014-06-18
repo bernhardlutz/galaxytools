@@ -15,8 +15,8 @@
         &gt; $output
     </command>
     <inputs>
-        <param format="bed,vcf,gff,gff3" name="inputA" type="data" label="BED or BAM file"/>
-        <param format="bed,gff,vcf,gff3" name="inputB" type="data" label="BED or BAM file"/>
+        <param format="bed,vcf,gff,gff3" name="inputA" type="data" label="BED/VCF/GFF file"/>
+        <param format="bed,gff,vcf,gff3" name="inputB" type="data" label="BED/VCF/GFF file"/>
         <expand macro="strand2" />
         <expand macro="overlap" />
 
